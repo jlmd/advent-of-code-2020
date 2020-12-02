@@ -6,31 +6,38 @@
         979 + 366 + 675 = 2020, so the result is 979 * 366 * 675 = 2020 = 241861950
 
  Solution:
-    Create a dict that will store the missing number for the sum of 2020 as key and the list of two numbers as value
-    1. Iterate each number of the input:
-        For each number, iterate all the other numbers:
-            Add 2020 - the sum of each pair of number as key and both numbers as value
-
-    2. Iterate each number of the input:
-        1. Check if current number is a key of the dict. In case it's it means that the sum is found, so return
-            current number * the two numbers found in dict
+    1. Sort numbers
+    2. Iterate numbers
+        For each number:
+            Use two pointers to iterate the numbers starting from current + 1
+            pointerLeft = current + 1
+            pointerRight = numbers.length - 1
+            while (pointerLeft < pointerRight)
+                sum = numbers[currentNumber] + numbers[pointerLeft] + numbers[pointerRight]
+                if (sum == 2020) result found
+                else if (sum < 2020) pointerLeft++
+                else pointerRight--
 
     Complexity:
         Time: O(n^2)
-        Space: O(n^2)
+        Space: O(n)
 """
 
 
 def day01part2(values):
-    rem_dict = {}
-    for i in values:
-        for j in values:
-            rem_dict[2020 - i - j] = [i, j]
-
-    for i in values:
-        if i in rem_dict:
-            print(i * rem_dict[i][0] * rem_dict[i][1])
-            return
+    values.sort()
+    for i in range(0, len(values)):
+        left = i + 1
+        right = len(values) - 1
+        while left < right:
+            sum = values[i] + values[left] + values[right]
+            if sum == 2020:
+                print(values[i] * values[left] * values[right])
+                return
+            elif sum < 2020:
+                left += 1
+            else:
+                right -= 1
 
 
 if __name__ == '__main__':
