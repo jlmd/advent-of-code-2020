@@ -3,7 +3,7 @@
     Find three numbers which sum 2020, and return the product of those numbers.
     Example:
         1721 979 366 299 675 1456
-        979 + 366 + 675 = 2020, so the result is 979 * 366 * 675 = 2020 = 241861950
+        979 + 366 + 675 = 2020, so the result is 979 * 366 * 675 = 241861950
 
  Solution:
     1. Sort numbers
