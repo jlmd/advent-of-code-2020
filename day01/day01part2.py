@@ -30,11 +30,10 @@ def day01part2(values):
         left = i + 1
         right = len(values) - 1
         while left < right:
-            sum = values[i] + values[left] + values[right]
-            if sum == 2020:
-                print(values[i] * values[left] * values[right])
-                return
-            elif sum < 2020:
+            current_sum = values[i] + values[left] + values[right]
+            if current_sum == 2020:
+                return values[i] * values[left] * values[right]
+            elif current_sum < 2020:
                 left += 1
             else:
                 right -= 1
@@ -44,4 +43,4 @@ if __name__ == '__main__':
     with open('input.txt', 'r') as f:
         data = f.read()
     entries = [int(i) for i in data.split()]
-    day01part2(entries)
+    print(day01part2(entries))

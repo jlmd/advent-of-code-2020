@@ -22,8 +22,7 @@ def day01part1(values):
     rem_dict = {}
     for i in values:
         if i in rem_dict:
-            print(i * rem_dict[i])
-            return
+            return i * rem_dict[i]
         rem_dict[2020 - i] = i
 
 
@@ -31,4 +30,4 @@ if __name__ == '__main__':
     with open('input.txt', 'r') as f:
         data = f.read()
     entries = [int(i) for i in data.split()]
-    day01part1(entries)
+    print(day01part1(entries))
