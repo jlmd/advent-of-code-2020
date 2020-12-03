@@ -19,9 +19,8 @@
         In this example, traversing the map using this slope (right 3, down 1) would cause you to encounter 7 trees.
 
  Solution:
-    Read the input line by line:
-        Starting from second line, keep a pointer to maintain right index, which will be incremented by 3 for each line
-        and will apply module the number of elements in first line.
+    Read the input line by line. Keep a pointer to maintain right index, which in each line will be calculated as:
+     right_index = (right_index + 3) % (width - 1)
 
     Complexity:
         Time: O(n)

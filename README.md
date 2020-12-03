@@ -8,3 +8,6 @@ This repo contains python solutions to the algorithms proposed in https://advent
 * [Day 2](day02)
     * [Part 1](day02/day02part1.py)
     * [Part 2](day02/day02part2.py)
+* [Day 3](day03)
+    * [Part 1](day03/day03part1.py)
+    * [Part 2](day03/day03part2.py)
