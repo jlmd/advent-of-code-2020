@@ -27,7 +27,7 @@ import re
     Read the input line by line, and for each line check if are the required fields are included in the passport.
 
     Complexity:
-        Time: O(n)
+        Time: O(n*m)
         Space: O(1)
 """
 
