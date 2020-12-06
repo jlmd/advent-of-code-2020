@@ -1,5 +1,5 @@
 # Advent of code 2020
-This repo contains python solutions to the algorithms proposed in https://adventofcode.com/2020
+This repo contains solutions in Python to the algorithms proposed in https://adventofcode.com/2020
 
 ##### Table of Contents  
 * [Day 1](day01)
@@ -17,3 +17,6 @@ This repo contains python solutions to the algorithms proposed in https://advent
 * [Day 5](day05)
     * [Part 1](day05/day05part1.py)
     * [Part 2](day05/day05part2.py)
+* [Day 6](day06)
+    * [Part 1](day06/day06part1.py)
+    * [Part 2](day06/day06part2.py)
