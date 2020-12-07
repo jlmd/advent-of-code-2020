@@ -37,4 +37,4 @@ if __name__ == '__main__':
     for bag_key in bags:
         if bag_key != color_to_found:
             count += dfs(bags[bag_key], bags, "shiny gold")
-    print count
+    print(count)

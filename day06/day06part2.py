@@ -19,4 +19,4 @@ if __name__ == '__main__':
                 chars = []
             line = f.readline()
     chars_count += count_common_chars_in_all_groups(chars)
-    print chars_count
+    print(chars_count)

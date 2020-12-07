@@ -84,4 +84,4 @@ if __name__ == '__main__':
             seat_id = day05part1(line)
             highest_seat_id = max(seat_id, highest_seat_id)
             line = f.readline()
-    print highest_seat_id
+    print(highest_seat_id)

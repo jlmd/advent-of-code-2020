@@ -31,4 +31,4 @@ if __name__ == '__main__':
             bags[bag_color] = bag
             line = f.readline()
 
-    print dfs(bags["shiny gold"], bags, 1) - 1
+    print(dfs(bags["shiny gold"], bags, 1) - 1)

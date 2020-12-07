@@ -17,4 +17,4 @@ if __name__ == '__main__':
                 chars = ""
             line = f.readline()
     unique_chars_count += count_unique_chars(chars)
-    print unique_chars_count
+    print(unique_chars_count)

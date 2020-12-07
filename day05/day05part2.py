@@ -85,4 +85,4 @@ if __name__ == '__main__':
     for i in range(0, len(free_ids)):
         if (i == 0 or free_ids[i - 1] != free_ids[i] - 1) and \
                 (i == len(free_ids) - 1 or free_ids[i + 1] != free_ids[i] + 1):
-            print free_ids[i]
+            print(free_ids[i])
