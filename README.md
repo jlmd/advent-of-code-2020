@@ -29,3 +29,6 @@ This repo contains solutions in Python to the algorithms proposed in https://adv
 * [Day 9](day09)
     * [Part 1](day09/day09part1.py)
     * [Part 2](day09/day09part2.py)
+* [Day 10](day10)
+    * [Part 1](day10/day10part1.py)
+    * [Part 2](day10/day10part2.py)
