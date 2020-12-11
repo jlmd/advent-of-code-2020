@@ -1,17 +1,28 @@
 from copy import deepcopy
 
 
+def is_occupied_first_seat_in_direction(x, y, dir_x, dir_y, seats):
+    x += dir_x
+    y += dir_y
+    while 0 <= x < len(seats) and 0 <= y < len(seats[0]):
+        if seats[x][y] == "#":
+            return True
+        if seats[x][y] == "L":
+            return False
+        x += dir_x
+        y += dir_y
+
+    return False
+
+
 def get_adjacent_occupied_seats(x, y, seats):
     adjacent_count = 0
     x_dirs = [-1, 0, 1]
     y_dirs = [-1, 0, 1]
     for i in range(0, len(x_dirs)):
         for j in range(0, len(y_dirs)):
-            new_x = x + x_dirs[i]
-            new_y = y + y_dirs[j]
-            if (new_x == x and new_y == y) or new_x < 0 or new_x >= len(seats) or new_y < 0 or new_y >= len(seats[0]):
-                continue
-            if seats[new_x][new_y] == "#":
+            if not (x_dirs[i] == 0 and y_dirs[j] == 0) \
+                    and is_occupied_first_seat_in_direction(x, y, x_dirs[i], y_dirs[j], seats):
                 adjacent_count += 1
     return adjacent_count
 
@@ -26,7 +37,7 @@ def seat_round(seats):
             if seats[i][j] == "L" and adjacent_occupied_seats == 0:
                 updated_seats[i][j] = "#"
                 seats_changed = True
-            elif seats[i][j] == "#" and adjacent_occupied_seats >= 4:
+            elif seats[i][j] == "#" and adjacent_occupied_seats >= 5:
                 updated_seats[i][j] = "L"
                 seats_changed = True
             if seats[i][j] == "#":
@@ -45,5 +56,4 @@ if __name__ == '__main__':
     seats_changed, occupied_seats, seats = seat_round(seats)
     while seats_changed:
         seats_changed, occupied_seats, seats = seat_round(seats)
-
     print(occupied_seats)
