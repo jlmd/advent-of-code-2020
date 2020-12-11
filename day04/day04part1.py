@@ -1,5 +1,3 @@
-import re
-
 """
  Problem:
     Count the passports that are valid from the input:
@@ -34,7 +32,7 @@ import re
 required_fields = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
 
 
-def day04part1(passport):
+def is_passport_valid(passport):
     for field in required_fields:
         if (field + ":") not in passport:
             return False
@@ -47,6 +45,6 @@ if __name__ == '__main__':
         data = f.read()
     passports = data.split("\n\n")
     for passport in passports:
-        if day04part1(passport):
+        if is_passport_valid(passport):
             valid_passports += 1
     print(valid_passports)

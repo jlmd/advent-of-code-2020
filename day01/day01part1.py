@@ -18,16 +18,16 @@
 """
 
 
-def day01part1(values):
+def count_sum_pairs(values, expected_value):
     rem_dict = {}
     for i in values:
         if i in rem_dict:
             return i * rem_dict[i]
-        rem_dict[2020 - i] = i
+        rem_dict[expected_value - i] = i
 
 
 if __name__ == '__main__':
     with open('input.txt', 'r') as f:
         data = f.read()
     entries = [int(i) for i in data.split()]
-    print(day01part1(entries))
+    print(count_sum_pairs(entries, 2020))

@@ -51,10 +51,6 @@ class Slope:
         self.right_index = (self.right_index + self.right) % max_right_index
 
 
-def day03part1(line, position):
-    return line[position] == '#'
-
-
 if __name__ == '__main__':
     slopes = [Slope(1, 1), Slope(3, 1), Slope(5, 1), Slope(7, 1), Slope(1, 2)]
     with open('input.txt', 'r') as f:
@@ -64,7 +60,7 @@ if __name__ == '__main__':
         while line:
             for slope in slopes:
                 if slope.is_position_valid(down_index):
-                    if day03part1(line, slope.right_index):
+                    if line[slope.right_index] == '#':
                         slope.trees += 1
                     slope.move(width - 1)
             down_index += 1

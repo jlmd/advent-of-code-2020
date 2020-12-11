@@ -27,11 +27,6 @@
         Space: O(1)
 """
 
-
-def day03part1(line, position):
-    return line[position] == '#'
-
-
 if __name__ == '__main__':
     trees = 0
     with open('input.txt', 'r') as f:
@@ -39,7 +34,7 @@ if __name__ == '__main__':
         width = len(line)
         right_index = 0
         while line:
-            if day03part1(line, right_index):
+            if line[right_index] == '#':
                 trees += 1
             right_index = (right_index + 3) % (width - 1)
             line = f.readline()

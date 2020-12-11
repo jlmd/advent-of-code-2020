@@ -24,16 +24,16 @@
 """
 
 
-def day01part2(values):
+def count_sum_triplets(values, expected_value):
     values.sort()
     for i in range(0, len(values)):
         left = i + 1
         right = len(values) - 1
         while left < right:
             current_sum = values[i] + values[left] + values[right]
-            if current_sum == 2020:
+            if current_sum == expected_value:
                 return values[i] * values[left] * values[right]
-            elif current_sum < 2020:
+            elif current_sum < expected_value:
                 left += 1
             else:
                 right -= 1
@@ -43,4 +43,4 @@ if __name__ == '__main__':
     with open('input.txt', 'r') as f:
         data = f.read()
     entries = [int(i) for i in data.split()]
-    print(day01part2(entries))
+    print(count_sum_triplets(entries, 2020))

@@ -21,7 +21,7 @@
 """
 
 
-def day02part1(lowest, highest, letter, password):
+def is_password_valid(lowest, highest, letter, password):
     letter_occurrences = 0
     for ch in password:
         if ch == letter:
@@ -39,7 +39,7 @@ if __name__ == '__main__':
             highest_range = int(data[0].split("-")[1])
             letter = data[1][:-1]
             password = data[2]
-            if day02part1(lowest_range, highest_range, letter, password):
+            if is_password_valid(lowest_range, highest_range, letter, password):
                 valid_passwords += 1
             line = f.readline()
     print(valid_passwords)

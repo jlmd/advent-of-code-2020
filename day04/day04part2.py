@@ -63,11 +63,11 @@ required_fields = {
     "hcl": lambda field: hair_color_regex.match(field),
     "ecl": lambda field: True if field == "amb" or field == "blu" or field == "brn" or field == "gry" or field == "grn"
                                  or field == "hzl" or field == "oth" else False,
-    "pid": lambda field: len(field) is 9 and in_range(field, 0, 999999999),
+    "pid": lambda field: len(field) == 9 and in_range(field, 0, 999999999),
 }
 
 
-def day04part1(passport):
+def is_passport_valid(passport):
     fields = dict(item.split(":") for item in re.split("\n| ", passport))
     for req_field in required_fields:
         if req_field not in fields or not required_fields[req_field](fields[req_field]):
@@ -81,6 +81,6 @@ if __name__ == '__main__':
         data = f.read()
     passports = data.split("\n\n")
     for passport in passports:
-        if day04part1(passport):
+        if is_passport_valid(passport):
             valid_passports += 1
     print(valid_passports)

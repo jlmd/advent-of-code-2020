@@ -18,7 +18,7 @@
 """
 
 
-def day02part1(position_one, position_two, letter, password):
+def is_password_valid(position_one, position_two, letter, password):
     return (password[position_one - 1] == letter and password[position_two - 1] != letter) or \
            (password[position_one - 1] != letter and password[position_two - 1] == letter)
 
@@ -33,7 +33,7 @@ if __name__ == '__main__':
             position_two = int(data[0].split("-")[1])
             letter = data[1][:-1]
             password = data[2]
-            if day02part1(position_one, position_two, letter, password):
+            if is_password_valid(position_one, position_two, letter, password):
                 valid_passwords += 1
             line = f.readline()
     print(valid_passwords)

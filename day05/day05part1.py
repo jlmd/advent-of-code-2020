@@ -48,7 +48,7 @@ import math
 """
 
 
-def day05part1(chars):
+def get_seat_id(chars):
     min_row = 0
     max_row = 127
     min_col = 0
@@ -81,7 +81,7 @@ if __name__ == '__main__':
     with open('input.txt', 'r') as f:
         line = f.readline()
         while line:
-            seat_id = day05part1(line)
+            seat_id = get_seat_id(line)
             highest_seat_id = max(seat_id, highest_seat_id)
             line = f.readline()
     print(highest_seat_id)

@@ -38,7 +38,7 @@ import math
 """
 
 
-def day05part1(chars):
+def get_seat_row_col(chars):
     min_row = 0
     max_row = 127
     min_col = 0
@@ -72,7 +72,7 @@ if __name__ == '__main__':
     with open('input.txt', 'r') as f:
         line = f.readline()
         while line:
-            row, col = day05part1(line)
+            row, col = get_seat_row_col(line)
             seats[row][col] = 1
             line = f.readline()
 
