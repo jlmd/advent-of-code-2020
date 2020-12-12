@@ -1,12 +1,7 @@
 class Compass:
     position = [0] * 2
-    orientations_degrees = {
-        "N": 0,
-        "E": 90,
-        "S": 180,
-        "W": 270,
-    }
-    degrees_orientation = {v: k for k, v in orientations_degrees.items()}
+    orientations_degrees = {"N": 0, "E": 90, "S": 180, "W": 270, }
+    degrees_orientations = {v: k for k, v in orientations_degrees.items()}
 
     def __init__(self, initial_direction):
         self.orientation = self.orientations_degrees[initial_direction]
@@ -26,7 +21,7 @@ class Compass:
         elif direction == "R":
             self.orientation = (self.orientation + value) % 360
         elif direction == "F":
-            self.move(self.degrees_orientation[self.orientation], value)
+            self.move(self.degrees_orientations[self.orientation], value)
 
     def get_manhattan_distance(self):
         return abs(self.position[0]) + abs(self.position[1])
