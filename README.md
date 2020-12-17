@@ -47,3 +47,5 @@ This repo contains solutions in Python to the algorithms proposed in https://adv
 * [Day 15](day15)
     * [Part 1](day15/day15part1.py)
     * [Part 2](day15/day15part2.py)
+* [Day 16](day16)
+    * [Part 1](day16/day16part1.py)
